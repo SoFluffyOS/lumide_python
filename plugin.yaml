@@ -1,0 +1,22 @@
+id: lumide_python
+name: 'Python'
+description: 'Python language support for Lumide IDE via Pyright.'
+entry_point: 'bin/main.dart'
+
+activation_events:
+  - 'workspaceContains:*.py'
+  - 'workspaceContains:requirements.txt'
+  - 'workspaceContains:pyproject.toml'
+
+permissions:
+  - shell:
+      - pyright
+      - pyright-langserver
+      - python3
+      - pip
+
+configuration:
+  - key: python-lsp.path
+    type: filePath
+    title: 'Pyright Executable Path'
+    description: 'Path to the pyright-langserver executable. If empty, the system PATH will be used.'
